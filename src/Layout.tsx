@@ -6,10 +6,12 @@ injectGlobal`
     ::-webkit-scrollbar {
         display: none;
     }
-    body {
+
+    * {
         user-select: none;
+        font-family: 'Inter', sans-serif;
     }
-`
+`;
 
 export default function Layout() {
     const { Screen } = useNavigation();
