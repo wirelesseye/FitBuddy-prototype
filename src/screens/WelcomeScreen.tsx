@@ -34,6 +34,6 @@ const styles = {
         font-weight: 600;
     `,
     bottom: css`
-        margin: auto 30px 0 30px;
+        margin: auto 30px 10px 30px;
     `,
 };

@@ -29,15 +29,26 @@ const styles = {
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid #000;
+        border: 2px solid #c9c9c9;
+        color: #3e3e3e;
+        box-shadow: 0 3px rgba(0, 0, 0, 0.1);
         padding: 8px 15px;
         border-radius: 8px;
         font-weight: 500;
         font-size: 18px;
+        :active {
+            transform: translateY(3px);
+            background-color: #e5e5e5;
+            box-shadow: none;
+        }
     `,
     primary: css`
-        background-color: #000;
+        background-color: #03ba00;
+        border-color: #028600;
         color: #fff;
+        :active {
+            background-color: #03a600;
+        }
     `,
     large: css``,
 };
