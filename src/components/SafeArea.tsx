@@ -35,6 +35,7 @@ export function SafeArea({
 const styles = {
     safeArea: css`
         display: flex;
+        flex-grow: 1;
         flex-direction: column;
         overflow: auto;
     `,

@@ -6,6 +6,8 @@ interface FlexBoxProps {
     direction?: "row" | "column";
     alignItems?: "flex-start" | "center" | "flex-end";
     justifyContent?: "flex-start" | "center" | "flex-end" | "space-between";
+    gap?: number;
+    grow?: number;
 }
 
 export function FlexBox(props: FlexBoxProps) {
@@ -14,16 +16,14 @@ export function FlexBox(props: FlexBoxProps) {
             className={cx(
                 css`
                     display: flex;
-                    ${props.direction
-                        ? `flex-direction: ${props.direction};`
-                        : null}
-                    ${props.alignItems
-                        ? `align-items: ${props.alignItems};`
-                        : null}
-                    ${props.justifyContent
-                        ? `justify-content: ${props.justifyContent};`
-                        : null}
                 `,
+                props.direction ? css`flex-direction: ${props.direction};` : null,
+                props.alignItems ? css`align-items: ${props.alignItems};` : null,
+                props.justifyContent
+                    ? css`justify-content: ${props.justifyContent};`
+                    : null,
+                props.grow ? css`flex-grow: ${props.grow};` : null,
+                props.gap ? css`gap: ${props.gap}px;` : null,
                 props.className
             )}
         >
