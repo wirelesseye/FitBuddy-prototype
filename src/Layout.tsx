@@ -6,6 +6,10 @@ injectGlobal`
     ::-webkit-scrollbar {
         display: none;
     }
+     
+    body {
+        background-color: #6c6c6c;
+    }
 
     * {
         user-select: none;
@@ -41,6 +45,7 @@ const styles = {
     `,
     main: css`
         position: absolute;
+        background-color: #FFF;
         left: 18px;
         right: 18px;
         top: 15px;
