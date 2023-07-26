@@ -31,6 +31,7 @@ const styles = {
         justify-content: center;
         border: 2px solid #c9c9c9;
         color: #3e3e3e;
+        background-color: #FFF;
         box-shadow: 0 3px rgba(0, 0, 0, 0.1);
         padding: 8px 15px;
         border-radius: 8px;
@@ -46,6 +47,7 @@ const styles = {
         background-color: #03ba00;
         border-color: #028600;
         color: #fff;
+        box-shadow: 0 3px rgba(2, 134, 0, 0.2);
         :active {
             background-color: #03a600;
         }

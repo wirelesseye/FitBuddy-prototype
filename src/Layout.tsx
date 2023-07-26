@@ -1,5 +1,5 @@
 import { useNavigation } from "./stores/navigation";
-import Iphone from "./assets/iphone.svg";
+import Iphone from "./assets/iPhone.svg";
 import { css, injectGlobal } from "@emotion/css";
 
 injectGlobal`

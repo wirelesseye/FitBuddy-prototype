@@ -1,12 +1,13 @@
-import { css } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 
 interface ScreenProps {
     children?: React.ReactNode;
+    className?: string;
 }
 
 export function Screen(props: ScreenProps) {
     return (
-        <div className={styles.screen}>
+        <div className={cx(styles.screen, props.className)}>
             {props.children}
         </div>
     )
