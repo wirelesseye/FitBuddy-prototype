@@ -1,11 +1,11 @@
 import { css, cx } from "@emotion/css";
 
-interface ScreenProps {
+interface ScreenBoxProps {
     children?: React.ReactNode;
     className?: string;
 }
 
-export function Screen(props: ScreenProps) {
+export function ScreenBox(props: ScreenBoxProps) {
     return (
         <div className={cx(styles.screen, props.className)}>
             {props.children}

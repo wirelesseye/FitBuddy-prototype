@@ -1,12 +1,12 @@
-import { FlexBox, Navigation, Screen } from "../components";
+import { FlexBox, Navigation, ScreenBox } from "../components";
 
 export default function ScheduleScreen() {
     return (
-        <Screen>
+        <ScreenBox>
             <FlexBox direction="column" grow={1}>
                 Schedule
             </FlexBox>
             <Navigation />
-        </Screen>
+        </ScreenBox>
     );
 }

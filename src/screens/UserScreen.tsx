@@ -1,12 +1,12 @@
-import { FlexBox, Navigation, Screen } from "../components";
+import { FlexBox, Navigation, ScreenBox } from "../components";
 
 export default function UserScreen() {
     return (
-        <Screen>
+        <ScreenBox>
             <FlexBox direction="column" grow={1}>
                 User
             </FlexBox>
             <Navigation />
-        </Screen>
+        </ScreenBox>
     );
 }

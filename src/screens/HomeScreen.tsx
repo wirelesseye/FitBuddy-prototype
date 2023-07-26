@@ -1,18 +1,19 @@
 import { css } from "@emotion/css";
-import { Button, FlexBox, Navigation, Screen } from "../components";
+import { Button, FlexBox, Navigation, ScreenBox } from "../components";
 import { useNavigation } from "../stores/navigation";
 
 export default function HomeScreen() {
     const { back } = useNavigation();
+    
     return (
-        <Screen className={styles.screen}>
+        <ScreenBox className={styles.screen}>
             <FlexBox direction="column" grow={1}>
                 Home
                 <Button onClick={() => back()}>Back</Button>
             </FlexBox>
 
             <Navigation />
-        </Screen>
+        </ScreenBox>
     );
 }
 

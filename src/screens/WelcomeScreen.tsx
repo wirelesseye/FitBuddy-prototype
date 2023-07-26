@@ -1,12 +1,12 @@
 import { css } from "@emotion/css";
-import { Button, FlexBox, SafeArea, Screen } from "../components";
+import { Button, FlexBox, SafeArea, ScreenBox } from "../components";
 import { useNavigation } from "../stores/navigation";
 
 export default function WelcomeScreen() {
     const { push } = useNavigation();
 
     return (
-        <Screen>
+        <ScreenBox>
             <SafeArea>
                 <FlexBox direction="column" grow={1}>
                     <div className={styles.title}>Fitness App</div>
@@ -16,13 +16,13 @@ export default function WelcomeScreen() {
                         direction="column"
                     >
                         <Button onClick={() => push("home")}>Log in</Button>
-                        <Button varient="primary" onClick={() => push("home")}>
+                        <Button varient="primary" onClick={() => push("signup")}>
                             Sign up
                         </Button>
                     </FlexBox>
                 </FlexBox>
             </SafeArea>
-        </Screen>
+        </ScreenBox>
     );
 }
 

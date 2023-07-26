@@ -98,11 +98,11 @@ const styles = {
         justify-content: center;
         padding: 8px;
         font-size: 30px;
-        color: #6eb54a;
+        color: #54B735;
         border-radius: 100%;
     `,
     select: css`
-        background-color: #6eb54a;
+        background-color: #54B735;
         color: #FFF;
         box-shadow: 0 3px rgba(2, 134, 0, 0.2);
     `,
