@@ -1,4 +1,5 @@
 import { css, cx } from "@emotion/css";
+import colors from "../colors";
 
 interface ButtonProps {
     onClick?: () => void;
@@ -44,12 +45,12 @@ const styles = {
         }
     `,
     primary: css`
-        background-color: #03ba00;
-        border-color: #028600;
+        background-color: ${colors.primary};
+        border-color: ${colors.primaryBorder};
         color: #fff;
         box-shadow: 0 3px rgba(2, 134, 0, 0.2);
         :active {
-            background-color: #03a600;
+            background-color: ${colors.primary};
         }
     `,
     large: css``,

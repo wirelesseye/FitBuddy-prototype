@@ -7,6 +7,7 @@ import {
     FlexBox,
     Footer,
     Input,
+    HeaderBack,
 } from "../components";
 import { useNavigation } from "../stores/navigation";
 
@@ -17,6 +18,7 @@ export default function SignUpScreen() {
         <ScreenBox>
             <SafeArea>
                 <Header>
+                    <HeaderBack />
                     <HeaderTitle>Sign up</HeaderTitle>
                 </Header>
                 <FlexBox direction="column" gap={25} marginX={20} marginY={30}>
@@ -34,7 +36,7 @@ export default function SignUpScreen() {
                     </FlexBox>
                 </FlexBox>
                 <Footer>
-                    <Button varient="primary" onClick={() => push("home")}>
+                    <Button varient="primary" onClick={() => push("selectActivites")}>
                         Next
                     </Button>
                 </Footer>

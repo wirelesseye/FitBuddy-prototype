@@ -6,6 +6,7 @@ import ScheduleScreen from "../screens/ScheduleScreen";
 import DietScreen from "../screens/DietScreen";
 import UserScreen from "../screens/UserScreen";
 import SignUpScreen from "../screens/SignUpScreen";
+import SelectActivitiesScreen from "../screens/SelectActivitiesScreen";
 
 const screens = {
     welcome: WelcomeScreen,
@@ -15,6 +16,7 @@ const screens = {
     diet: DietScreen,
     user: UserScreen,
     signup: SignUpScreen,
+    selectActivites: SelectActivitiesScreen,
 };
 
 export type ScreenID = keyof typeof screens;

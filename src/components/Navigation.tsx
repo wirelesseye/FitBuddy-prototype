@@ -4,6 +4,7 @@ import NavBg from "../assets/NavBg.svg";
 import Play from "../assets/Play.svg";
 import Play2 from "../assets/Play2.svg";
 import { ScreenID, useNavigation } from "../stores/navigation";
+import colors from "../colors";
 
 export function Navigation() {
     return (
@@ -98,11 +99,11 @@ const styles = {
         justify-content: center;
         padding: 8px;
         font-size: 30px;
-        color: #54B735;
+        color: ${colors.primary};
         border-radius: 100%;
     `,
     select: css`
-        background-color: #54B735;
+        background-color: ${colors.primary};
         color: #FFF;
         box-shadow: 0 3px rgba(2, 134, 0, 0.2);
     `,
