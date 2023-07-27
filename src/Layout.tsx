@@ -1,7 +1,8 @@
-import { Screen, useNavigation } from "./stores/navigation";
+import { ScreenID, screens, useNavigation } from "./stores/navigation";
 import iPhone from "./assets/iPhone.svg";
 import { css, cx, injectGlobal } from "@emotion/css";
 import { useEffect, useRef, useState } from "react";
+import ControlPanel from "./ControlPanel";
 
 injectGlobal`
     ::-webkit-scrollbar {
@@ -38,7 +39,7 @@ export default function Layout() {
     }, [screenId]);
 
     return (
-        <div>
+        <div className={styles.layout}>
             <div className={styles.container}>
                 <div
                     className={cx(
@@ -70,11 +71,26 @@ export default function Layout() {
                 )}
                 <img className={styles.shell} src={iPhone} />
             </div>
+            <div>
+                <ControlPanel />
+            </div>
         </div>
     );
 }
 
+interface ScreenProps {
+    screenId: ScreenID;
+}
+
+export function Screen({ screenId }: ScreenProps) {
+    const Comp = screens[screenId];
+    return <Comp />
+}
+
 const styles = {
+    layout: css`
+        display: flex;
+    `,
     container: css`
         position: relative;
         margin: auto;

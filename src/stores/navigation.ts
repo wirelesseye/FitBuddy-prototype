@@ -7,17 +7,16 @@ import DietScreen from "../screens/DietScreen";
 import UserScreen from "../screens/UserScreen";
 import SignUpScreen from "../screens/SignUpScreen";
 import SelectActivitiesScreen from "../screens/SelectActivitiesScreen";
-import React from "react";
 
-const screens: Record<string, () => JSX.Element> = {
+export const screens: Record<string, () => JSX.Element> = {
     welcome: WelcomeScreen,
+    signup: SignUpScreen,
+    selectActivites: SelectActivitiesScreen,
     home: HomeScreen,
     pets: PetsScreen,
     schedule: ScheduleScreen,
     diet: DietScreen,
     user: UserScreen,
-    signup: SignUpScreen,
-    selectActivites: SelectActivitiesScreen,
 };
 
 export type ScreenID = keyof typeof screens;
@@ -59,11 +58,3 @@ export const useNavigation = create<NavigationProps>((set) => ({
             }
         }),
 }));
-
-interface ScreenProps {
-    screenId: ScreenID;
-}
-
-export function Screen({ screenId }: ScreenProps) {
-    return React.createElement(screens[screenId]);
-}
