@@ -1,4 +1,5 @@
-import { screens, useNavigation } from "./stores/navigation";
+import { screens } from "./consts/screens";
+import { useNavigation } from "./stores/navigation";
 
 export default function ControlPanel() {
     const { screenId, push } = useNavigation();

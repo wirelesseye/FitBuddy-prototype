@@ -3,8 +3,9 @@ import { LuCalendarCheck, LuDog, LuHome, LuUser, LuUtensils } from "react-icons/
 import NavBg from "../assets/NavBg.svg";
 import Play from "../assets/Play.svg";
 import Play2 from "../assets/Play2.svg";
-import { ScreenID, useNavigation } from "../stores/navigation";
+import { useNavigation } from "../stores/navigation";
 import colors from "../consts/colors";
+import { ScreenID } from "../consts/screens";
 
 export function Navigation() {
     return (

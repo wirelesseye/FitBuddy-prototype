@@ -1,8 +1,9 @@
-import { ScreenID, screens, useNavigation } from "./stores/navigation";
+import { useNavigation } from "./stores/navigation";
 import iPhone from "./assets/iPhone.svg";
 import { css, cx, injectGlobal } from "@emotion/css";
 import { useEffect, useRef, useState } from "react";
 import ControlPanel from "./ControlPanel";
+import { ScreenID, screens } from "./consts/screens";
 
 injectGlobal`
     ::-webkit-scrollbar {
