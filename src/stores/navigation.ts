@@ -7,11 +7,13 @@ import DietScreen from "../screens/DietScreen";
 import UserScreen from "../screens/UserScreen";
 import SignUpScreen from "../screens/SignUpScreen";
 import SelectActivitiesScreen from "../screens/SelectActivitiesScreen";
+import CreatePetScreen from "../screens/CreatePetScreen";
 
 export const screens: Record<string, () => JSX.Element> = {
     welcome: WelcomeScreen,
     signup: SignUpScreen,
     selectActivites: SelectActivitiesScreen,
+    createPet: CreatePetScreen,
     home: HomeScreen,
     pets: PetsScreen,
     schedule: ScheduleScreen,

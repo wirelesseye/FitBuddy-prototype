@@ -1,5 +1,5 @@
 import { css, cx } from "@emotion/css";
-import { LuCalendar, LuDog, LuHome, LuUser, LuUtensils } from "react-icons/lu";
+import { LuCalendarCheck, LuDog, LuHome, LuUser, LuUtensils } from "react-icons/lu";
 import NavBg from "../assets/NavBg.svg";
 import Play from "../assets/Play.svg";
 import Play2 from "../assets/Play2.svg";
@@ -19,7 +19,7 @@ export function Navigation() {
                     <LuDog />
                 </NavButton>
                 <NavButton screen="schedule">
-                    <LuCalendar />
+                    <LuCalendarCheck />
                 </NavButton>
                 <NavButton screen="diet">
                     <LuUtensils />

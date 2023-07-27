@@ -12,7 +12,7 @@ export default function ControlPanel() {
                 onChange={(e) => push(e.target.value)}
             >
                 {Object.keys(screens).map((screen) => (
-                    <option value={screen}>{screen}</option>
+                    <option key={screen} value={screen}>{screen}</option>
                 ))}
             </select>
         </div>

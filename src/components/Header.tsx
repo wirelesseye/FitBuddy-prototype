@@ -1,14 +1,15 @@
-import { css } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 import { LuChevronLeft } from "react-icons/lu";
 import { useNavigation } from "../stores/navigation";
 
 interface HeaderProps {
     children?: React.ReactNode;
+    className?: string;
 }
 
 export function Header(props: HeaderProps) {
     return (
-        <div className={styles.header}>
+        <div className={cx(styles.header, props.className)}>
             {props.children}
         </div>
     );
@@ -22,10 +23,22 @@ export function HeaderTitle(props: HeaderTitleProps) {
     return <div className={styles.title}>{props.children}</div>;
 }
 
-export function HeaderBack() {
+interface HeaderBackProps {
+    onClick?: () => void;
+    border?: boolean;
+}
+
+export function HeaderBack({ onClick, border }: HeaderBackProps) {
     const { back } = useNavigation();
 
-    return <div className={styles.back} onClick={() => back("slideToRight")}><LuChevronLeft /></div>
+    return (
+        <div
+            className={cx(styles.back, { [styles.border]: border })}
+            onClick={onClick || (() => back("slideToRight"))}
+        >
+            <LuChevronLeft />
+        </div>
+    );
 }
 
 const styles = {
@@ -52,5 +65,9 @@ const styles = {
         :active {
             background: rgba(0, 0, 0, 0.1);
         }
-    `
+    `,
+    border: css`
+        background-color: #fff;
+        border: 1px solid #e4e4e4;
+    `,
 };

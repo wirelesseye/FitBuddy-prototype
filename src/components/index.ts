@@ -6,3 +6,4 @@ export * from "./Input";
 export * from "./SafeArea";
 export * from "./ScreenBox";
 export * from "./Navigation";
+export * from "./PetPreview";
