@@ -7,8 +7,9 @@ import DietScreen from "../screens/DietScreen";
 import UserScreen from "../screens/UserScreen";
 import SignUpScreen from "../screens/SignUpScreen";
 import SelectActivitiesScreen from "../screens/SelectActivitiesScreen";
+import React from "react";
 
-const screens = {
+const screens: Record<string, () => JSX.Element> = {
     welcome: WelcomeScreen,
     home: HomeScreen,
     pets: PetsScreen,
@@ -22,24 +23,27 @@ const screens = {
 export type ScreenID = keyof typeof screens;
 
 interface NavigationProps {
-    Screen: () => JSX.Element;
     screenId: ScreenID;
-    push: (id: ScreenID) => void;
+    animation: TransitionAnimation;
     history: ScreenID[];
-    back: () => void;
+    push: (id: ScreenID, animation?: TransitionAnimation) => void;
+    back: (animation?: TransitionAnimation) => void;
 }
+
+type TransitionAnimation = "none" | "fadeIn" | "slideToLeft" | "slideToRight";
 
 export const useNavigation = create<NavigationProps>((set) => ({
     Screen: screens.welcome,
     screenId: "welcome",
-    push: (id) =>
+    animation: "none",
+    history: ["welcome"],
+    push: (id, animation) =>
         set((state) => ({
-            Screen: screens[id],
             screenId: id,
             history: [...state.history, id],
+            animation: animation || "none",
         })),
-    history: ["welcome"],
-    back: () =>
+    back: (animation) =>
         set((state) => {
             if (state.history.length >= 2) {
                 const next = [...state.history];
@@ -47,11 +51,19 @@ export const useNavigation = create<NavigationProps>((set) => ({
                 const screenId = next[next.length - 1];
                 return {
                     screenId,
-                    Screen: screens[screenId],
                     history: next,
+                    animation: animation || "none",
                 };
             } else {
                 return {};
             }
         }),
 }));
+
+interface ScreenProps {
+    screenId: ScreenID;
+}
+
+export function Screen({ screenId }: ScreenProps) {
+    return React.createElement(screens[screenId]);
+}

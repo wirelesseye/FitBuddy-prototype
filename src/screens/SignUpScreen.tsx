@@ -28,15 +28,18 @@ export default function SignUpScreen() {
                     </FlexBox>
                     <FlexBox direction="column" gap={10}>
                         Password
-                        <Input type="password"  />
+                        <Input type="password" />
                     </FlexBox>
                     <FlexBox direction="column" gap={10}>
                         Confirm Password
-                        <Input type="password"  />
+                        <Input type="password" />
                     </FlexBox>
                 </FlexBox>
                 <Footer>
-                    <Button varient="primary" onClick={() => push("selectActivites")}>
+                    <Button
+                        varient="primary"
+                        onClick={() => push("selectActivites", "slideToLeft")}
+                    >
                         Next
                     </Button>
                 </Footer>

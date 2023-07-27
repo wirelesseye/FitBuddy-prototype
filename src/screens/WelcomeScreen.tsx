@@ -16,7 +16,7 @@ export default function WelcomeScreen() {
                         direction="column"
                     >
                         <Button onClick={() => push("home")}>Log in</Button>
-                        <Button varient="primary" onClick={() => push("signup")}>
+                        <Button varient="primary" onClick={() => push("signup", "slideToLeft")}>
                             Sign up
                         </Button>
                     </FlexBox>

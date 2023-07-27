@@ -25,7 +25,7 @@ export function HeaderTitle(props: HeaderTitleProps) {
 export function HeaderBack() {
     const { back } = useNavigation();
 
-    return <div className={styles.back} onClick={back}><LuChevronLeft /></div>
+    return <div className={styles.back} onClick={() => back("slideToRight")}><LuChevronLeft /></div>
 }
 
 const styles = {
