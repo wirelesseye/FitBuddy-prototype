@@ -1,5 +1,5 @@
 import { css, cx } from "@emotion/css";
-import colors from "../colors";
+import colors from "../consts/colors";
 
 export interface ButtonProps {
     onClick?: () => void;

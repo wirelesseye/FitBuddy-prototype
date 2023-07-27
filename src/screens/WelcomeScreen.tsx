@@ -15,7 +15,7 @@ export default function WelcomeScreen() {
                         gap={20}
                         direction="column"
                     >
-                        <Button onClick={() => push("home")}>Log in</Button>
+                        <Button>Log in</Button>
                         <Button varient="primary" onClick={() => push("signup", "slideToLeft")}>
                             Sign up
                         </Button>
