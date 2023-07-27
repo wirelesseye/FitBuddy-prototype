@@ -8,6 +8,7 @@ import {
     SafeArea,
     ScreenBox,
 } from "../components";
+import { ActivityButton } from "../components/ActivityButton";
 import { useNavigation } from "../stores/navigation";
 
 export default function SelectActivitiesScreen() {
@@ -21,14 +22,14 @@ export default function SelectActivitiesScreen() {
                     <HeaderTitle>Select Activities</HeaderTitle>
                 </Header>
                 <FlexBox direction="column" marginX={20} gap={15}>
-                    <Button>Walking</Button>
-                    <Button>Swimming</Button>
-                    <Button>Cycling</Button>
-                    <Button>Running</Button>
-                    <Button>Weight Training</Button>
-                    <Button>Tennis</Button>
-                    <Button>Golf</Button>
-                    <Button>Yoga</Button>
+                    <ActivityButton name="Walking" />
+                    <ActivityButton name="Swimming" />
+                    <ActivityButton name="Cycling" />
+                    <ActivityButton name="Running" />
+                    <ActivityButton name="Weight Training" />
+                    <ActivityButton name="Tennis" />
+                    <ActivityButton name="Golf" />
+                    <ActivityButton name="Yoga" />
                 </FlexBox>
                 <Footer>
                     <Button

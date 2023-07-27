@@ -1,5 +1,5 @@
 import { useNavigation } from "./stores/navigation";
-import Iphone from "./assets/iPhone.svg";
+import iPhone from "./assets/iPhone.svg";
 import { css, injectGlobal } from "@emotion/css";
 
 injectGlobal`
@@ -26,7 +26,7 @@ export default function Layout() {
                 <div className={styles.main}>
                     <Screen />
                 </div>
-                <img className={styles.shell} src={Iphone} />
+                <img className={styles.shell} src={iPhone} />
             </div>
         </div>
     );

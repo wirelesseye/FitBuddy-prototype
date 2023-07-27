@@ -1,7 +1,7 @@
 import { css, cx } from "@emotion/css";
 import colors from "../colors";
 
-interface ButtonProps {
+export interface ButtonProps {
     onClick?: () => void;
     children?: React.ReactNode;
     className?: string;
