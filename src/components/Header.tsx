@@ -74,6 +74,10 @@ const styles = {
         padding-right: 20px;
         margin-top: 30px;
         margin-bottom: 20px;
+        pointer-events: none;
+        &>div {
+            pointer-events: auto;
+        }
     `,
     title: css`
         font-size: 28px;
@@ -96,7 +100,7 @@ const styles = {
     border: css`
         background-color: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(5px);
-        border: 1px solid #e4e4e4;
+        border: 2px solid rgba(0, 0, 0, 0.1);
         :active {
             background-color: rgba(233, 233, 233, 0.8);
         }

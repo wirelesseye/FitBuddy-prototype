@@ -2,26 +2,34 @@ import { Canvas, useLoader } from "@react-three/fiber";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
 import { OrbitControls, Sky } from "@react-three/drei";
 import { css, cx } from "@emotion/css";
-import { SceneData, scenes } from "../consts/scenes";
+import { SceneData, getScene } from "../consts/scenes";
 import { useSettings } from "../stores/settings";
 import { Suspense, useMemo } from "react";
+import { SkinData, SkinID, getSkin } from "../consts/skins";
 
 interface PetPreviewProps {
     className?: string;
     distance?: number;
+    skinID: SkinID;
 }
 
-export function PetPreview({ className, distance = 200 }: PetPreviewProps) {
+export function PetPreview({
+    className,
+    skinID,
+    distance = 200,
+}: PetPreviewProps) {
     const sceneID = useSettings((state) => state.sceneID);
-    const petFbx = useLoader(FBXLoader, "/model/shiba.fbx");
-    const scene = scenes[sceneID];
+    const skin = getSkin(skinID);
+    const scene = getScene(sceneID);
 
     return (
         <div className={cx(styles.canvas, className)}>
             <Canvas camera={{ position: [0, 30, distance], far: 5000 }}>
                 <ambientLight intensity={scene.lightIntensity} />
                 <directionalLight />
-                <primitive object={petFbx} />
+                <Suspense fallback={null}>
+                    <Pet skin={skin} />
+                </Suspense>
                 <Suspense fallback={null}>
                     <Scene scene={scene} />
                 </Suspense>
@@ -29,6 +37,19 @@ export function PetPreview({ className, distance = 200 }: PetPreviewProps) {
                 {scene.sky ? <Sky /> : null}
             </Canvas>
         </div>
+    );
+}
+
+function Pet({ skin }: { skin: SkinData }) {
+    const petObj = useLoader(FBXLoader, skin.file);
+    const copiedPetObj = useMemo(() => petObj.clone(), [petObj]);
+
+    return (
+        <primitive
+            object={copiedPetObj}
+            scale={skin.scale}
+            position={skin.offset}
+        />
     );
 }
 

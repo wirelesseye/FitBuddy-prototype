@@ -8,7 +8,7 @@ import SignUpScreen from "../screens/SignUpScreen";
 import SelectActivitiesScreen from "../screens/SelectActivitiesScreen";
 import CreatePetScreen from "../screens/CreatePetScreen";
 
-export const screens: Record<string, () => JSX.Element> = {
+export const screens = {
     welcome: WelcomeScreen,
     signup: SignUpScreen,
     createPet: CreatePetScreen,

@@ -4,7 +4,7 @@ import { Navigation, PetPreview, ScreenBox } from "../components";
 export default function HomeScreen() {
     return (
         <ScreenBox className={styles.screen}>
-            <PetPreview distance={300} className={styles.petPreview} />
+            <PetPreview skinID="dinosaur" distance={300} className={styles.petPreview} />
             <Navigation />
         </ScreenBox>
     );

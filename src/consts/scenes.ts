@@ -7,7 +7,7 @@ export interface SceneData {
     sky: boolean;
 }
 
-const scenes: Record<string, SceneData> = {
+const scenes = {
     room: {
         file: "/model/set.fbx",
         scale: [2, 2, 2],
@@ -28,4 +28,10 @@ const scenes: Record<string, SceneData> = {
 
 export type SceneID = keyof typeof scenes;
 
-export { scenes };
+export function getScene(sceneID: SceneID) {
+    return scenes[sceneID] as SceneData;
+}
+
+export function getSceneIDs() {
+    return Object.keys(scenes) as SceneID[];
+}

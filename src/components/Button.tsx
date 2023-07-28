@@ -48,7 +48,7 @@ const styles = {
         background-color: ${colors.primary};
         border-color: ${colors.primaryBorder};
         color: #fff;
-        box-shadow: 0 3px rgba(2, 134, 0, 0.2);
+        box-shadow: 0 3px ${colors.primaryShadow};
         :active {
             background-color: ${colors.primary};
         }
