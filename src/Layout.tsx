@@ -29,15 +29,23 @@ export default function Layout() {
     const timer = useRef<number | null>(null);
 
     useEffect(() => {
-        setNextScreen(screenId);
-        if (timer.current) {
-            clearTimeout(timer.current);
-        }
-        timer.current = setTimeout(() => {
+        if (animation === "none") {
             setCurrScreen(screenId);
             setNextScreen(null);
-        }, 300);
-    }, [screenId]);
+            if (timer.current) {
+                clearTimeout(timer.current);
+            }
+        } else {
+            setNextScreen(screenId);
+            if (timer.current) {
+                clearTimeout(timer.current);
+            }
+            timer.current = setTimeout(() => {
+                setCurrScreen(screenId);
+                setNextScreen(null);
+            }, 300);
+        }
+    }, [animation, screenId]);
 
     return (
         <div className={styles.layout}>
@@ -71,6 +79,7 @@ export default function Layout() {
                     nextScreen
                 )}
                 <img className={styles.shell} src={iPhone} />
+                <div className={styles.navBar}></div>
             </div>
             <div>
                 <ControlPanel />
@@ -85,7 +94,7 @@ interface ScreenProps {
 
 export function Screen({ screenId }: ScreenProps) {
     const Comp = screens[screenId];
-    return <Comp />
+    return <Comp />;
 }
 
 const styles = {
@@ -111,6 +120,16 @@ const styles = {
         bottom: 15px;
         border-radius: 45px;
         overflow: hidden;
+    `,
+    navBar: css`
+        position: absolute;
+        width: 134px;
+        height: 5px;
+        background-color: #000;
+        border-radius: 5px;
+        bottom: 23px;
+        left: 50%;
+        transform: translateX(-50%);
     `,
     next: css`
         height: 100%;

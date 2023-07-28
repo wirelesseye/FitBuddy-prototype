@@ -11,8 +11,8 @@ import CreatePetScreen from "../screens/CreatePetScreen";
 export const screens: Record<string, () => JSX.Element> = {
     welcome: WelcomeScreen,
     signup: SignUpScreen,
-    selectActivites: SelectActivitiesScreen,
     createPet: CreatePetScreen,
+    selectActivities: SelectActivitiesScreen,
     home: HomeScreen,
     pets: PetsScreen,
     schedule: ScheduleScreen,

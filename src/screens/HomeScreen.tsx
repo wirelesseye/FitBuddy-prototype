@@ -1,17 +1,10 @@
 import { css } from "@emotion/css";
-import { Button, FlexBox, Navigation, ScreenBox } from "../components";
-import { useNavigation } from "../stores/navigation";
+import { Navigation, PetPreview, ScreenBox } from "../components";
 
 export default function HomeScreen() {
-    const { back } = useNavigation();
-    
     return (
         <ScreenBox className={styles.screen}>
-            <FlexBox direction="column" grow={1}>
-                Home
-                <Button onClick={() => back()}>Back</Button>
-            </FlexBox>
-
+            <PetPreview distance={300} className={styles.petPreview} />
             <Navigation />
         </ScreenBox>
     );
@@ -20,5 +13,8 @@ export default function HomeScreen() {
 const styles = {
     screen: css`
         /* background-color: red; */
+    `,
+    petPreview: css`
+        flex-grow: 1;
     `
 }

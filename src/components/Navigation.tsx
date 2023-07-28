@@ -56,7 +56,8 @@ function NavButton(props: NavButtonProps) {
 
 const styles = {
     navigation: css`
-        position: relative;
+        position: absolute;
+        bottom: 0;
     `,
     padding: css`
         width: 100%;

@@ -4,15 +4,19 @@ import {
     Footer,
     Header,
     HeaderBack,
+    HeaderButton,
     Input,
     PetPreview,
     SafeArea,
     ScreenBox,
 } from "../components";
 import { useNavigation } from "../stores/navigation";
+import { LuWallpaper } from "react-icons/lu";
+import { useSettings } from "../stores/settings";
 
 export default function CreatePetScreen() {
     const { push } = useNavigation();
+    const nextScene = useSettings(state => state.nextScene);
 
     return (
         <ScreenBox>
@@ -20,12 +24,15 @@ export default function CreatePetScreen() {
                 <PetPreview className={styles.petPreview} />
                 <Header className={styles.header}>
                     <HeaderBack border />
+                    <HeaderButton className={styles.sceneBtn} border onClick={nextScene}>
+                        <LuWallpaper size={22} />
+                    </HeaderButton>
                 </Header>
                 <Input className={styles.nameInput} placeholder="Name your pet..." />
                 <Footer>
                     <Button
                         varient="primary"
-                        onClick={() => push("home", "fadeIn")}
+                        onClick={() => push("selectActivities", "slideToLeft")}
                     >
                         Next
                     </Button>
@@ -50,5 +57,8 @@ const styles = {
     nameInput: css`
         text-align: center;
         margin: 10px 20px;
+    `,
+    sceneBtn: css`
+        margin-left: auto;
     `
 };

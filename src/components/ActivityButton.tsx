@@ -3,6 +3,7 @@ import { Button } from ".";
 import { useState } from "react";
 import { BsCheckLg } from "react-icons/bs";
 import { ActivityID, activities, activityIcons } from "../consts/activities";
+import colors from "../consts/colors";
 
 interface ActivityButtonProps {
     activity: ActivityID;
@@ -24,12 +25,9 @@ export function ActivityButton({ activity }: ActivityButtonProps) {
             </div>
             {name}
             <div
-                className={cx(
-                    styles.checkBox,
-                    css`
-                        color: ${isSelect ? "#000" : "rgba(0, 0, 0, 0)"};
-                    `
-                )}
+                className={cx(styles.checkBox, {
+                    [styles.select]: isSelect,
+                })}
             >
                 <BsCheckLg />
             </div>
@@ -51,6 +49,7 @@ const styles = {
         width: 20px;
         border-radius: 8px;
         font-size: 20px;
+        color: transparent;
     `,
     icon: css`
         display: flex;
@@ -58,5 +57,10 @@ const styles = {
         justify-content: center;
         font-size: 20px;
         margin-right: 15px;
-    `
+    `,
+    select: css`
+        background-color: ${colors.primary};
+        border-color: ${colors.primaryBorder};
+        color: #FFF;
+    `,
 };

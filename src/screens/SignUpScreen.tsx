@@ -38,7 +38,7 @@ export default function SignUpScreen() {
                 <Footer>
                     <Button
                         varient="primary"
-                        onClick={() => push("selectActivites", "slideToLeft")}
+                        onClick={() => push("createPet", "slideToLeft")}
                     >
                         Next
                     </Button>
