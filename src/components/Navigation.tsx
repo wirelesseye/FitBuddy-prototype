@@ -1,5 +1,11 @@
 import { css, cx } from "@emotion/css";
-import { LuCalendarCheck, LuDog, LuHome, LuUser, LuUtensils } from "react-icons/lu";
+import {
+    LuDog,
+    LuGauge,
+    LuHeartHandshake,
+    LuHome,
+    LuUser,
+} from "react-icons/lu";
 import NavBg from "../assets/NavBg.svg";
 import Play from "../assets/Play.svg";
 import Play2 from "../assets/Play2.svg";
@@ -19,11 +25,11 @@ export function Navigation() {
                 <NavButton screen="pets">
                     <LuDog />
                 </NavButton>
-                <NavButton screen="schedule">
-                    <LuCalendarCheck />
+                <NavButton screen="dashboard">
+                    <LuGauge />
                 </NavButton>
-                <NavButton screen="diet">
-                    <LuUtensils />
+                <NavButton screen="help">
+                    <LuHeartHandshake />
                 </NavButton>
                 <NavButton screen="user">
                     <LuUser />
@@ -106,7 +112,7 @@ const styles = {
     `,
     select: css`
         background-color: ${colors.primary};
-        color: #FFF;
+        color: #fff;
         box-shadow: 0 3px rgba(2, 134, 0, 0.2);
     `,
 };

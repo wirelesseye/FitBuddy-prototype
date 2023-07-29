@@ -5,8 +5,10 @@ export interface ButtonProps {
     onClick?: () => void;
     children?: React.ReactNode;
     className?: string;
-    varient?: "primary";
+    varient?: "primary" | "ghost";
     size?: "large";
+    paddingX?: number;
+    paddingY?: number;
 }
 
 export function Button(props: ButtonProps) {
@@ -14,9 +16,10 @@ export function Button(props: ButtonProps) {
         <div
             className={cx(
                 styles.button,
-                props.className,
                 props.varient ? styles[props.varient] : null,
-                props.size ? styles[props.size] : null
+                props.size ? styles[props.size] : null,
+                css`padding: ${props.paddingY ?? 8}px ${props.paddingX ?? 15}px;`,
+                props.className,
             )}
             onClick={props.onClick}
         >
@@ -30,11 +33,10 @@ const styles = {
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid #c9c9c9;
+        border: 2px solid ${colors.border};
         color: #3e3e3e;
         background-color: #FFF;
         box-shadow: 0 3px rgba(0, 0, 0, 0.1);
-        padding: 8px 15px;
         border-radius: 8px;
         font-weight: 500;
         font-size: 18px;
@@ -52,6 +54,10 @@ const styles = {
         :active {
             background-color: ${colors.primary};
         }
+    `,
+    ghost: css`
+        border: none;
+        box-shadow: none;
     `,
     large: css``,
 };

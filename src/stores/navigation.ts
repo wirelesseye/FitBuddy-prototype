@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { ScreenID, screens } from "../consts/screens";
 
-interface NavigationProps {
+interface NavigationState {
     screenId: ScreenID;
     animation: TransitionAnimation;
     history: ScreenID[];
@@ -11,7 +11,7 @@ interface NavigationProps {
 
 type TransitionAnimation = "none" | "fadeIn" | "slideToLeft" | "slideToRight";
 
-export const useNavigation = create<NavigationProps>((set) => ({
+export const useNavigation = create<NavigationState>((set) => ({
     Screen: screens.welcome,
     screenId: "welcome",
     animation: "none",

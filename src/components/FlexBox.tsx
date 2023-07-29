@@ -1,6 +1,6 @@
 import { css, cx } from "@emotion/css";
 
-interface FlexBoxProps {
+export interface FlexBoxProps {
     className?: string;
     children?: React.ReactNode;
     direction?: "row" | "column";
@@ -10,6 +10,9 @@ interface FlexBoxProps {
     grow?: number;
     marginX?: number;
     marginY?: number;
+    marginTop?: number;
+    marginBottom?: number;
+    paddingBottom?: number;
 }
 
 export function FlexBox(props: FlexBoxProps) {
@@ -52,8 +55,23 @@ export function FlexBox(props: FlexBoxProps) {
                     : null,
                 props.marginY
                     ? css`
-                          margin-top: ${props.marginX}px;
-                          margin-bottom: ${props.marginX}px;
+                          margin-top: ${props.marginY}px;
+                          margin-bottom: ${props.marginY}px;
+                      `
+                    : null,
+                props.marginTop
+                    ? css`
+                          margin-top: ${props.marginTop}px;
+                      `
+                    : null,
+                props.marginBottom
+                    ? css`
+                          margin-bottom: ${props.marginBottom}px;
+                      `
+                    : null,
+                props.paddingBottom
+                    ? css`
+                          padding-bottom: ${props.paddingBottom}px;
                       `
                     : null,
                 props.className

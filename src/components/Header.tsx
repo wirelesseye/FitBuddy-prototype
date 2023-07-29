@@ -1,4 +1,5 @@
 import { css, cx } from "@emotion/css";
+import { Text } from ".";
 import { LuChevronLeft } from "react-icons/lu";
 import { useNavigation } from "../stores/navigation";
 
@@ -20,7 +21,7 @@ interface HeaderTitleProps {
 }
 
 export function HeaderTitle(props: HeaderTitleProps) {
-    return <div className={styles.title}>{props.children}</div>;
+    return <Text size={28} weight={600}>{props.children}</Text>;
 }
 
 interface HeaderButtonProps {
@@ -79,10 +80,6 @@ const styles = {
             pointer-events: auto;
         }
     `,
-    title: css`
-        font-size: 28px;
-        font-weight: 600;
-    `,
     btn: css`
         display: flex;
         align-items: center;
@@ -98,11 +95,11 @@ const styles = {
         }
     `,
     border: css`
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(5px);
         border: 2px solid rgba(0, 0, 0, 0.1);
         :active {
-            background-color: rgba(233, 233, 233, 0.8);
+            background-color: rgba(233, 233, 233, 0.9);
         }
     `,
 };

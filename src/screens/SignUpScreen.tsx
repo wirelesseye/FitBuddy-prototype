@@ -21,16 +21,16 @@ export default function SignUpScreen() {
                     <HeaderBack />
                     <HeaderTitle>Sign up</HeaderTitle>
                 </Header>
-                <FlexBox direction="column" gap={25} marginX={20} marginY={30}>
-                    <FlexBox direction="column" gap={10}>
+                <FlexBox direction="column" gap={20} marginX={20} marginTop={50}>
+                    <FlexBox direction="column" gap={8}>
                         Email
                         <Input />
                     </FlexBox>
-                    <FlexBox direction="column" gap={10}>
+                    <FlexBox direction="column" gap={8}>
                         Password
                         <Input type="password" />
                     </FlexBox>
-                    <FlexBox direction="column" gap={10}>
+                    <FlexBox direction="column" gap={8}>
                         Confirm Password
                         <Input type="password" />
                     </FlexBox>
