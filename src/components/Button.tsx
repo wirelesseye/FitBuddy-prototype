@@ -1,5 +1,6 @@
 import { css, cx } from "@emotion/css";
 import colors from "../consts/colors";
+import React from "react";
 
 export interface ButtonProps {
     onClick?: () => void;
@@ -11,22 +12,28 @@ export interface ButtonProps {
     paddingY?: number;
 }
 
-export function Button(props: ButtonProps) {
-    return (
-        <div
-            className={cx(
-                styles.button,
-                props.varient ? styles[props.varient] : null,
-                props.size ? styles[props.size] : null,
-                css`padding: ${props.paddingY ?? 8}px ${props.paddingX ?? 15}px;`,
-                props.className,
-            )}
-            onClick={props.onClick}
-        >
-            {props.children}
-        </div>
-    );
-}
+export const Button = React.forwardRef<HTMLDivElement, ButtonProps>(
+    (props, ref) => {
+        return (
+            <div
+                className={cx(
+                    styles.button,
+                    props.varient ? styles[props.varient] : null,
+                    props.size ? styles[props.size] : null,
+                    css`
+                        padding: ${props.paddingY ?? 8}px
+                            ${props.paddingX ?? 15}px;
+                    `,
+                    props.className
+                )}
+                onClick={props.onClick}
+                ref={ref}
+            >
+                {props.children}
+            </div>
+        );
+    }
+);
 
 const styles = {
     button: css`
@@ -35,7 +42,7 @@ const styles = {
         justify-content: center;
         border: 2px solid ${colors.border};
         color: #3e3e3e;
-        background-color: #FFF;
+        background-color: #fff;
         box-shadow: 0 3px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         font-weight: 500;

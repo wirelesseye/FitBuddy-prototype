@@ -2,6 +2,7 @@ import { css, cx } from "@emotion/css";
 import { Text } from ".";
 import { LuChevronLeft } from "react-icons/lu";
 import { useNavigation } from "../stores/navigation";
+import React from "react";
 
 interface HeaderProps {
     children?: React.ReactNode;
@@ -21,7 +22,11 @@ interface HeaderTitleProps {
 }
 
 export function HeaderTitle(props: HeaderTitleProps) {
-    return <Text size={28} weight={600}>{props.children}</Text>;
+    return (
+        <Text size={28} weight={600}>
+            {props.children}
+        </Text>
+    );
 }
 
 interface HeaderButtonProps {
@@ -31,21 +36,23 @@ interface HeaderButtonProps {
     children?: React.ReactNode;
 }
 
-export function HeaderButton({
-    onClick,
-    border,
-    className,
-    children,
-}: HeaderButtonProps) {
-    return (
-        <div
-            className={cx(styles.btn, { [styles.border]: border }, className)}
-            onClick={onClick}
-        >
-            {children}
-        </div>
-    );
-}
+export const HeaderButton = React.forwardRef<HTMLDivElement, HeaderButtonProps>(
+    ({ onClick, border, className, children }, ref) => {
+        return (
+            <div
+                ref={ref}
+                className={cx(
+                    styles.btn,
+                    { [styles.border]: border },
+                    className
+                )}
+                onClick={onClick}
+            >
+                {children}
+            </div>
+        );
+    }
+);
 
 interface HeaderBackProps {
     onClick?: () => void;
@@ -60,7 +67,7 @@ export function HeaderBack({ onClick, border }: HeaderBackProps) {
             border={border}
             onClick={onClick || (() => back("slideToRight"))}
         >
-            <LuChevronLeft />
+            <LuChevronLeft size={24} />
         </HeaderButton>
     );
 }
@@ -76,7 +83,7 @@ const styles = {
         margin-top: 30px;
         margin-bottom: 20px;
         pointer-events: none;
-        &>div {
+        & > div {
             pointer-events: auto;
         }
     `,
@@ -85,11 +92,10 @@ const styles = {
         align-items: center;
         justify-content: center;
         font-size: 30px;
-        margin-right: 5px;
         border-radius: 8px;
         width: 35px;
         height: 35px;
-        color: #3e3e3e;
+        color: #222222;
         :active {
             background-color: rgba(0, 0, 0, 0.1);
         }
@@ -97,9 +103,11 @@ const styles = {
     border: css`
         background-color: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(5px);
-        border: 2px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 3px rgba(0, 0, 0, 0.1);
         :active {
             background-color: rgba(233, 233, 233, 0.9);
+            transform: translateY(2px);
+            box-shadow: none;
         }
     `,
 };

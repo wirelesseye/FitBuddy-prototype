@@ -12,6 +12,8 @@ export interface FlexBoxProps {
     marginY?: number;
     marginTop?: number;
     marginBottom?: number;
+    marginLeft?: number;
+    marginRight?: number;
     paddingBottom?: number;
 }
 
@@ -67,6 +69,16 @@ export function FlexBox(props: FlexBoxProps) {
                 props.marginBottom
                     ? css`
                           margin-bottom: ${props.marginBottom}px;
+                      `
+                    : null,
+                props.marginLeft
+                    ? css`
+                          margin-left: ${props.marginLeft}px;
+                      `
+                    : null,
+                props.marginRight
+                    ? css`
+                          margin-right: ${props.marginRight}px;
                       `
                     : null,
                 props.paddingBottom

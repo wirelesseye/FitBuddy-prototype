@@ -22,14 +22,14 @@ import { usePetStore } from "../stores/pets";
 export default function CreatePetScreen() {
     const { push } = useNavigation();
     const nextScene = useSettings((state) => state.nextScene);
-    const { pet, setPet } = usePetStore();
+    const { setPet } = usePetStore();
 
-    const [name, setName] = useState(pet.name);
+    const [name, setName] = useState("");
     const [skinID, setSkinID] = useState<SkinID>("shiba");
 
     const onSubmit = () => {
         push("selectActivities", "slideToLeft");
-        setPet({ name, skin: skinID });
+        setPet({ name: name || "Hachi", skin: skinID });
     };
 
     return (
@@ -43,7 +43,7 @@ export default function CreatePetScreen() {
                         border
                         onClick={nextScene}
                     >
-                        <LuWallpaper size={22} />
+                        <LuWallpaper size={20} />
                     </HeaderButton>
                 </Header>
                 <div className={styles.inputContainer}>

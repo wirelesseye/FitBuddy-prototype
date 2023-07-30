@@ -19,7 +19,9 @@ export default function PetsScreen() {
                     <HeaderTitle>My Pets</HeaderTitle>
                 </Header>
                 <FlexBox direction="column" grow={1} marginX={20} gap={15}>
-                    {pets.map(pet => <PetButton pet={pet} />)}
+                    {pets.map((pet, index) => (
+                        <PetButton key={index} pet={pet} />
+                    ))}
                 </FlexBox>
             </SafeArea>
             <Navigation />

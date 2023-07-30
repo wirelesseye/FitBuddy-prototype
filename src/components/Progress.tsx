@@ -3,11 +3,12 @@ import colors from "../consts/colors";
 
 interface ProgressProps {
     value: number;
+    className?: string;
 }
 
-export function Progress({ value }: ProgressProps) {
+export function Progress({ value, className }: ProgressProps) {
     return (
-        <div className={styles.track}>
+        <div className={cx(styles.track, className)}>
             <div
                 className={cx(
                     styles.indicator,
@@ -41,7 +42,7 @@ const styles = {
             left: 5px;
             right: 5px;
             top: 2px;
-            height: 5px;
+            height: 20%;
             border-radius: 2px;
             background-color: rgba(255, 255, 255, 0.2);
         }

@@ -8,6 +8,7 @@ import CreatePetScreen from "../screens/CreatePetScreen";
 import DashboardScreen from "../screens/DashboardScreen";
 import HelpScreen from "../screens/HelpScreen";
 import SetGoalsScreen from "../screens/SetGoalsScreen";
+import ScheduleScreen from "../screens/ScheduleScreen";
 
 export const screens = {
     welcome: WelcomeScreen,
@@ -20,6 +21,7 @@ export const screens = {
     dashboard: DashboardScreen,
     help: HelpScreen,
     user: UserScreen,
+    schedule: ScheduleScreen,
 };
 
 export type ScreenID = keyof typeof screens;
