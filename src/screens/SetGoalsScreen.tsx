@@ -129,9 +129,5 @@ const styles = {
         font-size: 24px;
         letter-spacing: 5px;
         font-weight: 600;
-        &::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
     `,
 };

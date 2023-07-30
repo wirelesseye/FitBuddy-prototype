@@ -12,31 +12,41 @@ import Play2 from "../assets/Play2.svg";
 import { useNavigation } from "../stores/navigation";
 import colors from "../consts/colors";
 import { ScreenID } from "../consts/screens";
+import { useState } from "react";
+import { StartDrawer } from "./StartDrawer";
 
 export function Navigation() {
+    const [isOpenStart, setIsOpenStart] = useState(false);
+
     return (
-        <div className={styles.navigation}>
-            <img className={styles.bg} src={NavBg} draggable={false} />
-            <div className={styles.playBtn}></div>
-            <div className={styles.btnContainer}>
-                <NavButton screen="home">
-                    <LuHome />
-                </NavButton>
-                <NavButton screen="pets">
-                    <LuDog />
-                </NavButton>
-                <NavButton screen="dashboard">
-                    <LuGauge />
-                </NavButton>
-                <NavButton screen="help">
-                    <LuHeartHandshake />
-                </NavButton>
-                <NavButton screen="user">
-                    <LuUser />
-                </NavButton>
+        <>
+            <div className={styles.navigation}>
+                <img className={styles.bg} src={NavBg} draggable={false} />
+                <div
+                    className={styles.playBtn}
+                    onClick={() => setIsOpenStart(true)}
+                ></div>
+                <div className={styles.btnContainer}>
+                    <NavButton screen="home">
+                        <LuHome />
+                    </NavButton>
+                    <NavButton screen="pets">
+                        <LuDog />
+                    </NavButton>
+                    <NavButton screen="dashboard">
+                        <LuGauge />
+                    </NavButton>
+                    <NavButton screen="help">
+                        <LuHeartHandshake />
+                    </NavButton>
+                    <NavButton screen="user">
+                        <LuUser />
+                    </NavButton>
+                </div>
+                <div className={styles.padding}></div>
             </div>
-            <div className={styles.padding}></div>
-        </div>
+            <StartDrawer isOpen={isOpenStart} setIsOpen={setIsOpenStart} />
+        </>
     );
 }
 

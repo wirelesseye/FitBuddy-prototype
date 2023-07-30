@@ -1,12 +1,12 @@
 import { Header, HeaderBack, HeaderTitle, SafeArea, ScreenBox } from "../components";
 
-export default function ScheduleScreen() {
+export default function GoalsScreen() {
     return (
         <ScreenBox>
             <SafeArea>
                 <Header>
                     <HeaderBack />
-                    <HeaderTitle>Schedule</HeaderTitle>
+                    <HeaderTitle>Goals</HeaderTitle>
                 </Header>
             </SafeArea>
         </ScreenBox>

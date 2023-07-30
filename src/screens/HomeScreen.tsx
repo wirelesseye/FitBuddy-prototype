@@ -16,8 +16,8 @@ import {
 import { usePets } from "../stores/pets";
 import { LuBell, LuBellDot, LuClipboardList } from "react-icons/lu";
 import { useState } from "react";
-import { ActivityID, activityIcons } from "../consts/activities";
 import { useNavigation } from "../stores/navigation";
+import { GiWeightLiftingUp } from "react-icons/gi";
 
 export default function HomeScreen() {
     const pets = usePets();
@@ -51,12 +51,7 @@ export default function HomeScreen() {
     );
 }
 
-const defaultTasks = [
-    { id: 1, activity: "weightTraining", name: "Bicep curl", intensity: "4×5" },
-];
-
 function Tasks() {
-    const [tasks, setTasks] = useState(defaultTasks);
     const { push } = useNavigation();
 
     return (
@@ -70,27 +65,20 @@ function Tasks() {
                 <FlexBox direction="column">
                     <Text weight={500}>Tasks</Text>
                     <FlexBox direction="column" gap={10} marginTop={10}>
-                        {tasks.map((task) => {
-                            const Icon =
-                                activityIcons[task.activity as ActivityID];
-                            return (
-                                <Button
-                                    key={task.id}
-                                    className={styles.taskItem}
-                                    onClick={() => {
-                                        push("schedule", "fadeIn");
-                                    }}
-                                >
-                                    <Icon />
-                                    <span>{task.name}</span>
-                                    <span>{task.intensity}</span>
-                                </Button>
-                            );
-                        })}
                         <Button
                             className={styles.taskItem}
                             onClick={() => {
-                                push("schedule", "fadeIn");
+                                push("workoutInProgress", "fadeIn");
+                            }}
+                        >
+                            <GiWeightLiftingUp />
+                            <span>Bicep curl</span>
+                            <span>4×5</span>
+                        </Button>
+                        <Button
+                            className={styles.taskItem}
+                            onClick={() => {
+                                push("goals", "fadeIn");
                             }}
                         >
                             Go to Schedules

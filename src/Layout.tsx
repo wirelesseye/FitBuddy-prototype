@@ -23,8 +23,8 @@ injectGlobal`
 export default function Layout() {
     const { screenId, animation } = useNavigation();
 
-    const [currScreen, setCurrScreen] = useState<string>(screenId);
-    const [nextScreen, setNextScreen] = useState<string | null>(null);
+    const [currScreen, setCurrScreen] = useState<ScreenID>(screenId);
+    const [nextScreen, setNextScreen] = useState<ScreenID | null>(null);
 
     const timer = useRef<number | null>(null);
 
@@ -135,7 +135,7 @@ const styles = {
         height: 100%;
         width: 100%;
         pointer-events: none;
-        /* background-color: red; */
+        
         @keyframes fadeIn {
             from {
                 opacity: 0;

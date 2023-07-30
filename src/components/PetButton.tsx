@@ -5,12 +5,13 @@ import { getSkinThumbnail } from "../consts/skins";
 
 interface PetButtonProps {
     pet: Pet;
+    onClick?: () => void;
 }
 
-export function PetButton({ pet }: PetButtonProps) {
+export function PetButton({ pet, onClick }: PetButtonProps) {
     const thumbnail = getSkinThumbnail(pet.skin);
     return (
-        <Button className={styles.btn}>
+        <Button className={styles.btn} onClick={onClick}>
             <div
                 className={cx(
                     css`

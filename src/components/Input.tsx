@@ -32,5 +32,9 @@ const styles = {
         :focus {
             border-color: #000000;
         }
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
     `,
 };

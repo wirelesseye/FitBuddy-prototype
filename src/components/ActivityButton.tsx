@@ -7,9 +7,15 @@ import colors from "../consts/colors";
 
 interface ActivityButtonProps {
     activity: ActivityID;
+    selectable?: boolean;
+    onClick?: () => void;
 }
 
-export function ActivityButton({ activity }: ActivityButtonProps) {
+export function ActivityButton({
+    activity,
+    onClick,
+    selectable = true,
+}: ActivityButtonProps) {
     const [isSelect, setIsSelect] = useState(false);
 
     const name = activities[activity];
@@ -18,19 +24,24 @@ export function ActivityButton({ activity }: ActivityButtonProps) {
     return (
         <Button
             className={styles.activityBtn}
-            onClick={() => setIsSelect((select) => !select)}
+            onClick={() => {
+                setIsSelect((select) => !select);
+                if (onClick) onClick();
+            }}
         >
             <div className={styles.icon}>
                 <Icon />
             </div>
             {name}
-            <div
-                className={cx(styles.checkBox, {
-                    [styles.select]: isSelect,
-                })}
-            >
-                <BsCheckLg />
-            </div>
+            {selectable ? (
+                <div
+                    className={cx(styles.checkBox, {
+                        [styles.select]: isSelect,
+                    })}
+                >
+                    <BsCheckLg />
+                </div>
+            ) : null}
         </Button>
     );
 }
@@ -61,6 +72,6 @@ const styles = {
     select: css`
         background-color: ${colors.primary};
         border-color: ${colors.primaryBorder};
-        color: #FFF;
+        color: #fff;
     `,
 };

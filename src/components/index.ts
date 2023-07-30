@@ -1,5 +1,6 @@
 export * from "./Button";
 export * from "./Card";
+export * from "./Drawer";
 export * from "./FlexBox";
 export * from "./Footer";
 export * from "./Header";

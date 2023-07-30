@@ -9,7 +9,7 @@ export default function WelcomeScreen() {
         <ScreenBox>
             <SafeArea>
                 <FlexBox direction="column" grow={1}>
-                    <div className={styles.title}>Fitness App</div>
+                    <div className={styles.title}>FitBuddy</div>
                     <FlexBox
                         className={styles.bottom}
                         gap={20}
@@ -30,7 +30,7 @@ const styles = {
     title: css`
         align-self: center;
         margin-top: auto;
-        font-size: 32px;
+        font-size: 40px;
         font-weight: 600;
     `,
     bottom: css`

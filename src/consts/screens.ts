@@ -8,7 +8,11 @@ import CreatePetScreen from "../screens/CreatePetScreen";
 import DashboardScreen from "../screens/DashboardScreen";
 import HelpScreen from "../screens/HelpScreen";
 import SetGoalsScreen from "../screens/SetGoalsScreen";
-import ScheduleScreen from "../screens/ScheduleScreen";
+import GoalsScreen from "../screens/GoalsScreen";
+import StartWorkoutScreen from "../screens/StartWorkoutScreen";
+import WorkoutInProgressScreen from "../screens/WorkoutInProgressScreen";
+import CustomWorkoutScreen from "../screens/CustomWorkoutScreen";
+import WorkoutCompleteScreen from "../screens/WorkoutCompleteScreen";
 
 export const screens = {
     welcome: WelcomeScreen,
@@ -21,7 +25,11 @@ export const screens = {
     dashboard: DashboardScreen,
     help: HelpScreen,
     user: UserScreen,
-    schedule: ScheduleScreen,
+    goals: GoalsScreen,
+    startWorkout: StartWorkoutScreen,
+    workoutInProgress: WorkoutInProgressScreen,
+    customWorkout: CustomWorkoutScreen,
+    workoutComplete: WorkoutCompleteScreen,
 };
 
 export type ScreenID = keyof typeof screens;
