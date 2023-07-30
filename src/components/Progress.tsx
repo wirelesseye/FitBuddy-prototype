@@ -2,15 +2,22 @@ import { css, cx } from "@emotion/css";
 import colors from "../consts/colors";
 
 interface ProgressProps {
-    progress: number;
+    value: number;
 }
 
-export function Progress({ progress }: ProgressProps) {
-    return <div className={styles.track}>
-        <div className={cx(styles.indicator, css`
-            width: ${progress * 100}%;
-        `)}><div className={styles.hightlight}></div></div>
-    </div>;
+export function Progress({ value }: ProgressProps) {
+    return (
+        <div className={styles.track}>
+            <div
+                className={cx(
+                    styles.indicator,
+                    css`
+                        width: ${value * 100}%;
+                    `
+                )}
+            ></div>
+        </div>
+    );
 }
 
 const styles = {
@@ -28,14 +35,15 @@ const styles = {
         outline: 2px solid ${colors.primaryBorder};
         border-radius: 5px;
         box-shadow: 0 4px ${colors.primaryShadow};
+        ::after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            right: 5px;
+            top: 2px;
+            height: 5px;
+            border-radius: 2px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
     `,
-    hightlight: css`
-        position: absolute;
-        left: 5px;
-        right: 5px;
-        top: 2px;
-        height: 5px;
-        border-radius: 2px;
-        background-color: rgba(255, 255, 255, 0.2);
-    `
 };

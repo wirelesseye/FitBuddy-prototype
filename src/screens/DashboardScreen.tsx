@@ -38,7 +38,7 @@ function Goal() {
                 marginBottom={20}
             >
                 <Text size={20} weight={500}>
-                    Daily Goal
+                    Goals
                 </Text>
                 <Button varient="ghost" paddingX={2} paddingY={0}>
                     <LuChevronRight size={22} />
@@ -47,17 +47,17 @@ function Goal() {
             <FlexBox direction="column" gap={20}>
                 <FlexBox direction="column" gap={10}>
                     <FlexBox justifyContent="space-between">
-                        <Text weight={500}>Exp</Text>
+                        <Text weight={500}>Exp (Daily)</Text>
                         <Text weight={500}>6 / 30</Text>
                     </FlexBox>
-                    <Progress progress={6 / 30} />
+                    <Progress value={6 / 30} />
                 </FlexBox>
                 <FlexBox direction="column" gap={10}>
                     <FlexBox justifyContent="space-between">
-                        <Text weight={500}>Steps</Text>
+                        <Text weight={500}>Steps (Daily)</Text>
                         <Text weight={500}>3,000 / 10,000</Text>
                     </FlexBox>
-                    <Progress progress={3000 / 10000} />
+                    <Progress value={3000 / 10000} />
                 </FlexBox>
             </FlexBox>
         </Card>
@@ -85,21 +85,21 @@ function Diet() {
                         <Text weight={500}>Calories</Text>
                         <Text weight={500}>600 / 2,500 (Net)</Text>
                     </FlexBox>
-                    <Progress progress={3000 / 10000} />
+                    <Progress value={3000 / 10000} />
                 </FlexBox>
                 <FlexBox direction="column" gap={10}>
                     <FlexBox justifyContent="space-between">
                         <Text weight={500}>Fats</Text>
                         <Text weight={500}>24 / 60 g</Text>
                     </FlexBox>
-                    <Progress progress={24 / 60} />
+                    <Progress value={24 / 60} />
                 </FlexBox>
                 <FlexBox direction="column" gap={10}>
                     <FlexBox justifyContent="space-between">
                         <Text weight={500}>Carbs</Text>
                         <Text weight={500}>50 / 135 g</Text>
                     </FlexBox>
-                    <Progress progress={50 / 135} />
+                    <Progress value={50 / 135} />
                 </FlexBox>
             </FlexBox>
         </Card>

@@ -21,7 +21,7 @@ export const usePets = (): Pet[] => {
     return [
         firstPet,
         {
-            name: "Dinosaur",
+            name: "Deno",
             skin: "dinosaur",
         },
     ];

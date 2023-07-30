@@ -1,11 +1,23 @@
 import { css, cx } from "@emotion/css";
 
-interface InputProps extends React.HTMLProps<HTMLInputElement> {}
+interface InputProps extends React.HTMLProps<HTMLInputElement> {
+    onValueChange?: (value: string) => void;
+}
 
 export function Input(props: InputProps) {
-    const { className, ...other } = props;
+    const { className, onValueChange, ...other } = props;
 
-    return <input className={cx(styles.input, className)} {...other} />;
+    return (
+        <input
+            className={cx(styles.input, className)}
+            onChange={
+                onValueChange
+                    ? (e) => onValueChange((e.target as HTMLInputElement).value)
+                    : undefined
+            }
+            {...other}
+        />
+    );
 }
 
 const styles = {

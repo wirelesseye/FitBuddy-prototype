@@ -51,9 +51,7 @@ export default function CreatePetScreen() {
                         className={styles.nameInput}
                         placeholder="Name your pet..."
                         value={name}
-                        onChange={(e) =>
-                            setName((e.target as HTMLInputElement).value)
-                        }
+                        onValueChange={setName}
                     />
                     <div className={styles.editIcon}>
                         <LuEdit />

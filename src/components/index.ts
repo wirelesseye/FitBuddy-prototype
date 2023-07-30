@@ -12,3 +12,5 @@ export * from "./Navigation";
 export * from "./PetButton";
 export * from "./PetPreview";
 export * from "./Progress";
+export * from "./Radio";
+export * from "./Slider";

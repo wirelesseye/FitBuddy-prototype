@@ -7,12 +7,14 @@ import SelectActivitiesScreen from "../screens/SelectActivitiesScreen";
 import CreatePetScreen from "../screens/CreatePetScreen";
 import DashboardScreen from "../screens/DashboardScreen";
 import HelpScreen from "../screens/HelpScreen";
+import SetGoalsScreen from "../screens/SetGoalsScreen";
 
 export const screens = {
     welcome: WelcomeScreen,
     signup: SignUpScreen,
     createPet: CreatePetScreen,
     selectActivities: SelectActivitiesScreen,
+    setGoals: SetGoalsScreen,
     home: HomeScreen,
     pets: PetsScreen,
     dashboard: DashboardScreen,

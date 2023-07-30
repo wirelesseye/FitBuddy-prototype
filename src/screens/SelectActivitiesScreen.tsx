@@ -30,7 +30,7 @@ export default function SelectActivitiesScreen() {
                 <Footer>
                     <Button
                         varient="primary"
-                        onClick={() => push("home", "fadeIn")}
+                        onClick={() => push("setGoals", "slideToLeft")}
                     >
                         Next
                     </Button>
