@@ -12,7 +12,7 @@ interface PetsState {
 }
 
 export const usePetStore = create<PetsState>((set) => ({
-    pet: { name: "Hachi", skin: "shiba" },
+    pet: { name: "Buddy", skin: "shiba" },
     setPet: (pet) => set({ pet }),
 }));
 

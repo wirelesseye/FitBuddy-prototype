@@ -29,7 +29,7 @@ export default function CreatePetScreen() {
 
     const onSubmit = () => {
         push("selectActivities", "slideToLeft");
-        setPet({ name: name || "Hachi", skin: skinID });
+        setPet({ name: name || "Buddy", skin: skinID });
     };
 
     return (

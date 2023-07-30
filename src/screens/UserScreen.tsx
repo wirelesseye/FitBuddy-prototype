@@ -14,7 +14,7 @@ export default function UserScreen() {
                 <Header>
                     <HeaderTitle>User</HeaderTitle>
                 </Header>
-                <FlexBox direction="column" grow={1}>
+                <FlexBox direction="column" marginX={20}>
                     User
                 </FlexBox>
             </SafeArea>
