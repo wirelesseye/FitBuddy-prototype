@@ -7,9 +7,11 @@ import {
     SafeArea,
     ScreenBox,
 } from "../components";
+import { useNavigation } from "../stores/navigation";
 import { usePets } from "../stores/pets";
 
 export default function PetsScreen() {
+    const { push } = useNavigation();
     const pets = usePets();
 
     return (
@@ -20,7 +22,11 @@ export default function PetsScreen() {
                 </Header>
                 <FlexBox direction="column" grow={1} marginX={20} gap={15}>
                     {pets.map((pet, index) => (
-                        <PetButton key={index} pet={pet} />
+                        <PetButton
+                            onClick={() => push("pet", "slideToLeft")}
+                            key={index}
+                            pet={pet}
+                        />
                     ))}
                 </FlexBox>
             </SafeArea>

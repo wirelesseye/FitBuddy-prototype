@@ -20,6 +20,7 @@ import AddScheduleScreen from "../screens/AddScheduleScreen";
 import SchedulesScreen from "../screens/SchedulesScreen";
 import WorkoutHelpScreen from "../screens/WorkoutHelpScreen";
 import RecordDietScreen from "../screens/RecordDietScreen";
+import PetScreen from "../screens/PetScreen";
 
 export const screens = {
     welcome: WelcomeScreen,
@@ -44,6 +45,7 @@ export const screens = {
     schedules: SchedulesScreen,
     workoutHelp: WorkoutHelpScreen,
     recordDiet: RecordDietScreen,
+    pet: PetScreen,
 };
 
 export type ScreenID = keyof typeof screens;
