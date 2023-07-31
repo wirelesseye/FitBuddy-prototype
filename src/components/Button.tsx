@@ -6,8 +6,8 @@ export interface ButtonProps {
     onClick?: () => void;
     children?: React.ReactNode;
     className?: string;
+    disabled?: boolean;
     varient?: "primary" | "ghost";
-    size?: "large";
     paddingX?: number;
     paddingY?: number;
 }
@@ -19,14 +19,14 @@ export const Button = React.forwardRef<HTMLDivElement, ButtonProps>(
                 className={cx(
                     styles.button,
                     props.varient ? styles[props.varient] : null,
-                    props.size ? styles[props.size] : null,
                     css`
                         padding: ${props.paddingY ?? 8}px
                             ${props.paddingX ?? 15}px;
                     `,
+                    {[styles.disabled]: props.disabled},
                     props.className
                 )}
-                onClick={props.onClick}
+                onClick={props.disabled ? undefined : props.onClick}
                 ref={ref}
             >
                 {props.children}
@@ -66,5 +66,11 @@ const styles = {
         border: none;
         box-shadow: none;
     `,
-    large: css``,
+    disabled: css`
+        opacity: 0.5;
+        :active {
+            background-color: unset;
+            transform: none;
+        }
+    `
 };

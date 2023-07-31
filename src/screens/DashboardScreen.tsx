@@ -1,9 +1,10 @@
-import { LuChevronRight } from "react-icons/lu";
+import { LuChevronRight, LuSettings2 } from "react-icons/lu";
 import {
     Button,
     Card,
     FlexBox,
     Header,
+    HeaderButton,
     HeaderTitle,
     Navigation,
     Progress,
@@ -12,6 +13,8 @@ import {
     Text,
 } from "../components";
 import { useNavigation } from "../stores/navigation";
+import { css } from "@emotion/css";
+import { GiWeightLiftingUp } from "react-icons/gi";
 
 export default function DashboardScreen() {
     return (
@@ -19,6 +22,9 @@ export default function DashboardScreen() {
             <SafeArea>
                 <Header>
                     <HeaderTitle>Dashboard</HeaderTitle>
+                    <HeaderButton className={styles.editBtn}>
+                        <LuSettings2 size={20} />
+                    </HeaderButton>
                 </Header>
                 <FlexBox
                     direction="column"
@@ -27,6 +33,7 @@ export default function DashboardScreen() {
                     paddingBottom={130}
                 >
                     <Goal />
+                    <Schedules />
                     <Diet />
                 </FlexBox>
             </SafeArea>
@@ -77,8 +84,45 @@ function Goal() {
     );
 }
 
+function Schedules() {
+    const { push } = useNavigation();
+
+    return (
+        <Card direction="column">
+            <FlexBox
+                alignItems="center"
+                justifyContent="space-between"
+                marginBottom={20}
+            >
+                <Text size={20} weight={500}>
+                    Schedules
+                </Text>
+                <Button
+                    varient="ghost"
+                    paddingX={2}
+                    paddingY={0}
+                    onClick={() => push("schedules", "slideToLeft")}
+                >
+                    <LuChevronRight size={22} />
+                </Button>
+            </FlexBox>
+            <FlexBox direction="column" gap={20}>
+                <FlexBox gap={8}>
+                    <Text weight={600}>Thursday</Text>
+                    <Text>27 July</Text>
+                </FlexBox>
+                <FlexBox>
+                    <GiWeightLiftingUp className={styles.scheduleIcon} />
+                    <span>Bicep curl</span>
+                    <span className={styles.scheduleIntensity}>4×5</span>
+                </FlexBox>
+            </FlexBox>
+        </Card>
+    );
+}
+
 function Diet() {
-    const {push} = useNavigation();
+    const { push } = useNavigation();
 
     return (
         <Card direction="column">
@@ -125,3 +169,15 @@ function Diet() {
         </Card>
     );
 }
+
+const styles = {
+    editBtn: css`
+        margin-left: auto;
+    `,
+    scheduleIcon: css`
+        margin-right: 10px;
+    `,
+    scheduleIntensity: css`
+        margin-left: auto;
+    `,
+};

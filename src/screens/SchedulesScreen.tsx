@@ -1,8 +1,8 @@
-import { GiWeightLiftingUp } from "react-icons/gi";
+import { css } from "@emotion/css";
 import {
     Button,
+    WeeklyCalendar,
     FlexBox,
-    Footer,
     Header,
     HeaderBack,
     HeaderTitle,
@@ -10,10 +10,11 @@ import {
     ScreenBox,
     Text,
 } from "../components";
+import { LuPlusCircle } from "react-icons/lu";
 import { useNavigation } from "../stores/navigation";
-import { css } from "@emotion/css";
+import { GiWeightLiftingUp } from "react-icons/gi";
 
-export default function StartWorkoutScreen() {
+export default function SchedulesScreen() {
     const { push } = useNavigation();
 
     return (
@@ -21,16 +22,12 @@ export default function StartWorkoutScreen() {
             <SafeArea>
                 <Header>
                     <HeaderBack />
-                    <HeaderTitle>Start Workout</HeaderTitle>
+                    <HeaderTitle>Schedules</HeaderTitle>
                 </Header>
-                <FlexBox direction="column" marginX={20} marginTop={15}>
+                <FlexBox direction="column" marginX={20} gap={20}>
+                    <WeeklyCalendar />
                     <FlexBox direction="column" gap={15}>
-                        <Text size={18} weight={500}>
-                            From Schedule
-                        </Text>
-                        <Button
-                            onClick={() => push("workoutInProgress", "fadeIn")}
-                        >
+                        <Button>
                             <GiWeightLiftingUp
                                 className={styles.scheduleIcon}
                             />
@@ -39,15 +36,14 @@ export default function StartWorkoutScreen() {
                                 4×5
                             </span>
                         </Button>
-                        <Button onClick={() => push("schedules", "slideToLeft")}>
-                            Go to Schedules
+                        <Button
+                            varient="primary"
+                            onClick={() => push("addSchedule", "slideToLeft")}
+                        >
+                            <LuPlusCircle className={styles.icon} />
+                            <Text>Add</Text>
                         </Button>
                     </FlexBox>
-                    <Footer>
-                        <Button onClick={() => push("customWorkout", "slideToLeft")}>
-                            Start Custom Workout
-                        </Button>
-                    </Footer>
                 </FlexBox>
             </SafeArea>
         </ScreenBox>
@@ -60,5 +56,8 @@ const styles = {
     `,
     scheduleIntensity: css`
         margin-left: auto;
+    `,
+    icon: css`
+        margin-right: 10px;
     `,
 };

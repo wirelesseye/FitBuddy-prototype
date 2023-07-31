@@ -7,6 +7,7 @@ import {
     SafeArea,
     ScreenBox,
     Text,
+    WeeklyCalendar,
 } from "../components";
 
 export default function GoalsScreen() {
@@ -18,6 +19,7 @@ export default function GoalsScreen() {
                     <HeaderTitle>Goals</HeaderTitle>
                 </Header>
                 <FlexBox direction="column" marginX={20} gap={30}>
+                    <WeeklyCalendar showStreaks />
                     <FlexBox direction="column" gap={20}>
                         <FlexBox direction="column" gap={10}>
                             <FlexBox justifyContent="space-between">
@@ -33,9 +35,6 @@ export default function GoalsScreen() {
                             </FlexBox>
                             <Progress value={3000 / 10000} />
                         </FlexBox>
-                    </FlexBox>
-                    <FlexBox direction="column">
-                        <Text size={20} weight={600}>Schedules</Text>
                     </FlexBox>
                 </FlexBox>
             </SafeArea>

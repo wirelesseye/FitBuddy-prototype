@@ -76,7 +76,7 @@ function Tasks() {
                         <Button
                             className={styles.taskItem}
                             onClick={() => {
-                                push("goals", "fadeIn");
+                                push("schedules", "fadeIn");
                             }}
                         >
                             Go to Schedules

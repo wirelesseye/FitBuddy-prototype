@@ -1,5 +1,7 @@
 export * from "./Button";
 export * from "./Card";
+export * from "./WeeklyCalendar";
+export * from "./DaySelector";
 export * from "./Drawer";
 export * from "./FlexBox";
 export * from "./Footer";
@@ -16,3 +18,4 @@ export * from "./Popover";
 export * from "./Progress";
 export * from "./Radio";
 export * from "./Slider";
+export * from "./Switch";

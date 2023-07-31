@@ -13,8 +13,9 @@ export default function SelectPetDrawer(props: DrawerProps) {
                 marginTop={15}
                 paddingBottom={35}
             >
-                {pets.map((pet) => (
+                {pets.map((pet, i) => (
                     <PetButton
+                        key={i}
                         pet={pet}
                         onClick={() => props.setIsOpen!(false)}
                     />
