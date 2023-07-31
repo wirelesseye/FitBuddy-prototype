@@ -11,7 +11,7 @@ export function StartDrawer(props: DrawerProps) {
             <FlexBox marginX={20} direction="column" marginTop={15} paddingBottom={35} gap={15}>
                 <Button onClick={() => push("startWorkout", "fadeIn")}><LuDumbbell className={styles.icon} />Start Workout</Button>
                 <Button onClick={() => push("sleepInProgress", "fadeIn")}><LuBed className={styles.icon} />Start Sleep</Button>
-                <Button><LuUtensils className={styles.icon} />Record Diet</Button>
+                <Button onClick={() => push("recordDiet", "fadeIn")}><LuUtensils className={styles.icon} />Record Diet</Button>
             </FlexBox>
         </Drawer>
     );
