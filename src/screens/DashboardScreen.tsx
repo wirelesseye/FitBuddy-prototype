@@ -22,9 +22,9 @@ export default function DashboardScreen() {
             <SafeArea>
                 <Header>
                     <HeaderTitle>Dashboard</HeaderTitle>
-                    <HeaderButton className={styles.editBtn}>
+                    {/* <HeaderButton className={styles.editBtn}>
                         <LuSettings2 size={20} />
-                    </HeaderButton>
+                    </HeaderButton> */}
                 </Header>
                 <FlexBox
                     direction="column"
