@@ -18,6 +18,7 @@ import SleepInProgressScreen from "../screens/SleepInProgressScreen";
 import SleepCompleteScreen from "../screens/SleepCompleteScreen";
 import AddScheduleScreen from "../screens/AddScheduleScreen";
 import SchedulesScreen from "../screens/SchedulesScreen";
+import WorkoutHelpScreen from "../screens/WorkoutHelpScreen";
 
 export const screens = {
     welcome: WelcomeScreen,
@@ -40,6 +41,7 @@ export const screens = {
     sleepComplete: SleepCompleteScreen,
     addSchedule: AddScheduleScreen,
     schedules: SchedulesScreen,
+    workoutHelp: WorkoutHelpScreen,
 };
 
 export type ScreenID = keyof typeof screens;

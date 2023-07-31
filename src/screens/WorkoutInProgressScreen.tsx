@@ -66,7 +66,9 @@ export default function WorkoutInProgressScreen() {
                         </FlexBox>
                     </FlexBox>
                     <FlexBox direction="column">
-                        <Button>
+                        <Button
+                            onClick={() => push("workoutHelp", "slideToLeft")}
+                        >
                             <LuInfo className={styles.icon} />
                             Help & Examples
                         </Button>

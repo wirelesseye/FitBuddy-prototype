@@ -10,8 +10,11 @@ import {
 } from "../components";
 import { LuDumbbell, LuMessagesSquare, LuPlay, LuSearch } from "react-icons/lu";
 import animalDoctor from "../assets/animal_doctor.png";
+import { useNavigation } from "../stores/navigation";
 
 export default function HelpScreen() {
+    const { push } = useNavigation();
+
     return (
         <ScreenBox>
             <SafeArea>
@@ -45,9 +48,19 @@ export default function HelpScreen() {
                         </FlexBox>
                     </FlexBox>
                     <FlexBox direction="column" gap={15}>
-                        <Button className={styles.helpBtn}><LuDumbbell /> Get Workout Help & Examples</Button>
-                        <Button className={styles.helpBtn}><LuMessagesSquare /> Online Consultation</Button>
-                        <Button className={styles.helpBtn}><LuPlay />Play App Instruction</Button>
+                        <Button
+                            className={styles.helpBtn}
+                            onClick={() => push("workoutHelp", "slideToLeft")}
+                        >
+                            <LuDumbbell /> Get Workout Help & Examples
+                        </Button>
+                        <Button className={styles.helpBtn}>
+                            <LuMessagesSquare /> Online Consultation
+                        </Button>
+                        <Button className={styles.helpBtn}>
+                            <LuPlay />
+                            Play Guided Tour
+                        </Button>
                     </FlexBox>
                 </FlexBox>
             </SafeArea>
@@ -80,5 +93,5 @@ const styles = {
     helpBtn: css`
         gap: 15px;
         justify-content: flex-start;
-    `
+    `,
 };
