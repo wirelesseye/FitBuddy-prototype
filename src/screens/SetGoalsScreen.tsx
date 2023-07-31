@@ -55,14 +55,25 @@ export default function SetGoalsScreen() {
                                     Weekly
                                 </label>
                             </RadioGroup>
-                            <Input
-                                className={styles.stepInput}
-                                value={step}
-                                onValueChange={(value) =>
-                                    setStep(parseInt(value))
-                                }
-                                type="number"
-                            />
+                            <FlexBox
+                                className={styles.inputContainer}
+                                direction="column"
+                            >
+                                <Input
+                                    className={styles.stepInput}
+                                    value={step}
+                                    onValueChange={(value) =>
+                                        setStep(parseInt(value))
+                                    }
+                                    type="number"
+                                />
+                                <Text
+                                    weight={500}
+                                    className={styles.inputLabel}
+                                >
+                                    Steps
+                                </Text>
+                            </FlexBox>
                             <Slider
                                 value={[step]}
                                 onValueChange={(v) => setStep(v[0])}
@@ -73,7 +84,7 @@ export default function SetGoalsScreen() {
                     </FlexBox>
                     <FlexBox direction="column" gap={15}>
                         <Text size={20} weight={600}>
-                            Workout Exp Goal
+                            Workout Goal
                         </Text>
                         <FlexBox direction="column" marginX={10} gap={15}>
                             <RadioGroup defaultValue="daily">
@@ -93,14 +104,26 @@ export default function SetGoalsScreen() {
                                     Weekly
                                 </label>
                             </RadioGroup>
-                            <Input
-                                className={styles.stepInput}
-                                value={exp}
-                                onValueChange={(value) =>
-                                    setExp(parseInt(value))
-                                }
-                                type="number"
-                            />
+                            <FlexBox
+                                className={styles.inputContainer}
+                                direction="column"
+                            >
+                                <Input
+                                    className={styles.stepInput}
+                                    value={exp}
+                                    onValueChange={(value) =>
+                                        setExp(parseInt(value))
+                                    }
+                                    type="number"
+                                />
+                                <Text
+                                    weight={500}
+                                    className={styles.inputLabel}
+                                >
+                                    Exp
+                                </Text>
+                            </FlexBox>
+
                             <Slider
                                 value={[exp]}
                                 onValueChange={(v) => setExp(v[0])}
@@ -129,5 +152,14 @@ const styles = {
         font-size: 24px;
         letter-spacing: 5px;
         font-weight: 600;
+    `,
+    inputContainer: css`
+        position: relative;
+    `,
+    inputLabel: css`
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: 14px;
     `,
 };
