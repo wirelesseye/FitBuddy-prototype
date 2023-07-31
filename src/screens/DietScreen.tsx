@@ -1,12 +1,22 @@
-import { FlexBox, Navigation, ScreenBox } from "../components";
+import {
+    FlexBox,
+    Header,
+    HeaderBack,
+    HeaderTitle,
+    SafeArea,
+    ScreenBox,
+} from "../components";
 
 export default function DietScreen() {
     return (
         <ScreenBox>
-            <FlexBox direction="column" grow={1}>
-                Diet
-            </FlexBox>
-            <Navigation />
+            <SafeArea>
+                <Header>
+                    <HeaderBack />
+                    <HeaderTitle>Diet</HeaderTitle>
+                </Header>
+                <FlexBox direction="column"></FlexBox>
+            </SafeArea>
         </ScreenBox>
     );
 }

@@ -11,6 +11,7 @@ import {
     ScreenBox,
     Text,
 } from "../components";
+import { useNavigation } from "../stores/navigation";
 
 export default function DashboardScreen() {
     return (
@@ -19,7 +20,12 @@ export default function DashboardScreen() {
                 <Header>
                     <HeaderTitle>Dashboard</HeaderTitle>
                 </Header>
-                <FlexBox direction="column" marginX={20} gap={20} paddingBottom={130}>
+                <FlexBox
+                    direction="column"
+                    marginX={20}
+                    gap={20}
+                    paddingBottom={130}
+                >
                     <Goal />
                     <Diet />
                 </FlexBox>
@@ -30,6 +36,8 @@ export default function DashboardScreen() {
 }
 
 function Goal() {
+    const { push } = useNavigation();
+
     return (
         <Card direction="column">
             <FlexBox
@@ -40,7 +48,12 @@ function Goal() {
                 <Text size={20} weight={500}>
                     Goals
                 </Text>
-                <Button varient="ghost" paddingX={2} paddingY={0}>
+                <Button
+                    varient="ghost"
+                    paddingX={2}
+                    paddingY={0}
+                    onClick={() => push("goals", "slideToLeft")}
+                >
                     <LuChevronRight size={22} />
                 </Button>
             </FlexBox>
@@ -65,6 +78,8 @@ function Goal() {
 }
 
 function Diet() {
+    const {push} = useNavigation();
+
     return (
         <Card direction="column">
             <FlexBox
@@ -75,7 +90,12 @@ function Diet() {
                 <Text size={20} weight={500}>
                     Diet
                 </Text>
-                <Button varient="ghost" paddingX={2} paddingY={0}>
+                <Button
+                    varient="ghost"
+                    paddingX={2}
+                    paddingY={0}
+                    onClick={() => push("diet", "slideToLeft")}
+                >
                     <LuChevronRight size={22} />
                 </Button>
             </FlexBox>

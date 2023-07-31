@@ -13,6 +13,9 @@ import StartWorkoutScreen from "../screens/StartWorkoutScreen";
 import WorkoutInProgressScreen from "../screens/WorkoutInProgressScreen";
 import CustomWorkoutScreen from "../screens/CustomWorkoutScreen";
 import WorkoutCompleteScreen from "../screens/WorkoutCompleteScreen";
+import DietScreen from "../screens/DietScreen";
+import SleepInProgressScreen from "../screens/SleepInProgressScreen";
+import SleepCompleteScreen from "../screens/SleepCompleteScreen";
 
 export const screens = {
     welcome: WelcomeScreen,
@@ -30,6 +33,9 @@ export const screens = {
     workoutInProgress: WorkoutInProgressScreen,
     customWorkout: CustomWorkoutScreen,
     workoutComplete: WorkoutCompleteScreen,
+    diet: DietScreen,
+    sleepInProgress: SleepInProgressScreen,
+    sleepComplete: SleepCompleteScreen,
 };
 
 export type ScreenID = keyof typeof screens;

@@ -17,7 +17,6 @@ import { usePets } from "../stores/pets";
 import { LuBell, LuBellDot, LuClipboardList } from "react-icons/lu";
 import { useState } from "react";
 import { useNavigation } from "../stores/navigation";
-import { GiWeightLiftingUp } from "react-icons/gi";
 
 export default function HomeScreen() {
     const pets = usePets();
@@ -71,7 +70,6 @@ function Tasks() {
                                 push("workoutInProgress", "fadeIn");
                             }}
                         >
-                            <GiWeightLiftingUp />
                             <span>Bicep curl</span>
                             <span>4×5</span>
                         </Button>
@@ -129,7 +127,7 @@ function Notifications() {
                             ))}
                         </ul>
                     ) : (
-                        <Text size={14}>No new notifications.</Text>
+                        <Text size={14}>No notifications.</Text>
                     )}
                 </FlexBox>
             </PopoverContent>

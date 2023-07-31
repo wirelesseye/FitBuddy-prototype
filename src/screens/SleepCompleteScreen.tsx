@@ -12,8 +12,9 @@ import { usePets } from "../stores/pets";
 import { getSkinThumbnail } from "../consts/skins";
 import { useNavigation } from "../stores/navigation";
 import colors from "../consts/colors";
+import { BsFillCheckCircleFill } from "react-icons/bs";
 
-export default function WorkoutCompleteScreen() {
+export default function SleepCompleteScreen() {
     const { push } = useNavigation();
     const pets = usePets();
 
@@ -31,9 +32,12 @@ export default function WorkoutCompleteScreen() {
                     gap={30}
                 >
                     <FlexBox direction="column" alignItems="center" gap={15}>
-                        <Text size={60}>🎉</Text>
+                        <Text size={60} color={colors.primary}>
+                            <BsFillCheckCircleFill />
+                        </Text>
+
                         <Text weight={600} size={24}>
-                            Workout Completed
+                            Sleep Completed
                         </Text>
                     </FlexBox>
                     <FlexBox
@@ -81,7 +85,7 @@ export default function WorkoutCompleteScreen() {
                             gap={18}
                         >
                             <Text>Time</Text>
-                            <Text>Avg. Heart Rate</Text>
+                            <Text>Quality</Text>
                         </FlexBox>
                         <FlexBox
                             direction="column"
@@ -89,11 +93,11 @@ export default function WorkoutCompleteScreen() {
                             gap={10}
                         >
                             <Text weight={600} size={22}>
-                                00:37:20
+                                08:12:16
                             </Text>
                             <FlexBox alignItems="center" gap={10}>
                                 <Text weight={600} size={22}>
-                                    83 BPM
+                                    Good
                                 </Text>
                             </FlexBox>
                         </FlexBox>
@@ -134,6 +138,6 @@ const styles = {
         border-radius: 8px;
         background-color: ${colors.primary};
         box-shadow: 0 3px ${colors.primaryShadow};
-        color: #FFF;
+        color: #fff;
     `,
 };
