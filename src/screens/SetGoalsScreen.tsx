@@ -136,7 +136,7 @@ export default function SetGoalsScreen() {
                 <Footer>
                     <Button
                         varient="primary"
-                        onClick={() => push("home", "fadeIn")}
+                        onClick={() => push("guide", "fadeIn")}
                     >
                         Done
                     </Button>

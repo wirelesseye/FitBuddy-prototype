@@ -1,10 +1,9 @@
-import { LuChevronRight, LuSettings2 } from "react-icons/lu";
+import { LuChevronRight } from "react-icons/lu";
 import {
     Button,
     Card,
     FlexBox,
     Header,
-    HeaderButton,
     HeaderTitle,
     Navigation,
     Progress,

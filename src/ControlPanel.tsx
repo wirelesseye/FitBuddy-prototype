@@ -10,7 +10,8 @@ export default function ControlPanel() {
             <select
                 value={screenId}
                 id="screen-select"
-                onChange={(e) => push(e.target.value)}
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                onChange={(e) => push((e.target as any).value)}
             >
                 {Object.keys(screens).map((screen) => (
                     <option key={screen} value={screen}>{screen}</option>
