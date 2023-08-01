@@ -57,7 +57,7 @@ export default function HelpScreen() {
                         <Button className={styles.helpBtn}>
                             <LuMessagesSquare /> Online Consultation
                         </Button>
-                        <Button className={styles.helpBtn}>
+                        <Button className={styles.helpBtn} onClick={() => push("guide", "fadeIn")}>
                             <LuPlay />
                             Play Guided Tour
                         </Button>
