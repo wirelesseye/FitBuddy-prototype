@@ -1,4 +1,4 @@
-import { LuEdit, LuWallpaper } from "react-icons/lu";
+import { LuPencil, LuWallpaper } from "react-icons/lu";
 import {
     Button,
     FlexBox,
@@ -47,7 +47,7 @@ export default function PetScreen() {
                         value={pets[0].name}
                     />
                     <div className={styles.editIcon}>
-                        <LuEdit />
+                        <LuPencil />
                     </div>
                 </div>
                 <FlexBox

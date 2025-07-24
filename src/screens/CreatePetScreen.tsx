@@ -13,7 +13,7 @@ import {
     SkinButton,
 } from "../components";
 import { useNavigation } from "../stores/navigation";
-import { LuEdit, LuWallpaper } from "react-icons/lu";
+import { LuPencil, LuWallpaper } from "react-icons/lu";
 import { useSettings } from "../stores/settings";
 import { useState } from "react";
 import { SkinID, getSkinIDs } from "../consts/skins";
@@ -54,7 +54,7 @@ export default function CreatePetScreen() {
                         onValueChange={setName}
                     />
                     <div className={styles.editIcon}>
-                        <LuEdit />
+                        <LuPencil />
                     </div>
                 </div>
                 <FlexBox marginX={20} gap={10}>
